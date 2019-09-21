@@ -1,10 +1,14 @@
 import React, { useEffect, useState }  from 'react';
 import axios from 'axios';
 
+import Loading from './components/Loading';
+import Display from './components/Display';
+
 function App() {
 
-  const [loading, setLoading] = useState(true)
-  const [countries, setCountries] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [countries, setCountries] = useState([]);
+  const [countrie, setCountrie] = useState("");
  
   useEffect(() => {
     axios.get("https://restcountries.eu/rest/v2/all")
@@ -14,20 +18,17 @@ function App() {
     });
   }, [])
 
+  const handleChange = e => {
+    const { value } = e.target;
+    setCountrie(JSON.parse(value));
+  }
+
   return (
     <div>
       {loading ? 
-        <p>Carregando</p>
+        <Loading/>
         :
-        <select>
-          {countries.map(countrie => {
-            return (
-              <option>
-                {countrie.name}
-              </option>
-            )
-          })}
-        </select>
+        <Display countries={countries} handleChange={handleChange} countrie={countrie}/>
       }
     </div>
   );
