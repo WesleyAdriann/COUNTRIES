@@ -57,6 +57,11 @@ html, body, #root {
   flex-direction: column;
 }
 
+.title {
+  font-size: 30px;
+  color: #fff;
+}
+
 .select-countrie {
   height: 20vh;
 }

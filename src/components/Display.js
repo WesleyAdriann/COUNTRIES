@@ -26,7 +26,6 @@ const Display = ({country, countries, handleChange}) => {
                         <div className="card-body">
                             <img src={country.flag} className="front flag" alt={`Flag ${country.name}`}/>
                             <div className="back">
-                                {console.log(country)}
                                 <p>Name: {country.name}</p>
                                 <p>Capital: {country.capital}</p>
                                 <p>Population: {country.population}</p>
