@@ -1,0 +1,6 @@
+versoin: '3'
+services:
+  countries:
+    build: .
+    ports:
+      - "3000:3000"

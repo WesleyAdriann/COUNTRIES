@@ -1,7 +1,7 @@
 FROM node:12.4-alpine
 
-COPY . /app
 WORKDIR /app
-EXPOSE 3000
+COPY . .
 RUN npm i 
+EXPOSE 3000
 ENTRYPOINT npm start
