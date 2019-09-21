@@ -1,24 +1,49 @@
 import React from 'react';
 
-const Display = ({countrie, countries, handleChange}) => {
+const Display = ({country, countries, handleChange}) => {
     return (
         <div className="container-display">
+            <div className="title">
+                <h1>COUNTRIES</h1>
+            </div>
             <div className="select-countrie">
                 <select onChange={handleChange}>
-                    {countries.map(countrie => {
+                    <option hidden>
+                        Select country...
+                    </option>
+                    {countries.map(country => {
                         return (
-                        <option key={countrie.numericCode} value={JSON.stringify(countrie)}>
-                            {countrie.name}
+                        <option key={country.numericCode} value={JSON.stringify(country)}>
+                            {country.name}
                         </option>
                         )
                     })}
                 </select>
             </div>
             <div className="countrie-info">
-                {countrie ? 
-                    <img src={countrie.flag} className="flag" alt={`Flag ${countrie.name}`}/>
+                {country ? 
+                    <div className="card">
+                        <div className="card-body">
+                            <img src={country.flag} className="front flag" alt={`Flag ${country.name}`}/>
+                            <div className="back">
+                                {console.log(country)}
+                                <p>Name: {country.name}</p>
+                                <p>Capital: {country.capital}</p>
+                                <p>Population: {country.population}</p>
+                            </div>
+                        </div>
+                    </div>
                 :
-                    null
+                    <div className="card">
+                        <div className="card-body">
+                            <div className="front">
+                                Choose a country
+                            </div>
+                            <div className="back">
+                                and see informations
+                            </div>
+                        </div>
+                    </div>                    
                 }
             </div>
         </div>

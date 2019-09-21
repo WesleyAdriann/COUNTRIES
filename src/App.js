@@ -8,7 +8,7 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   const [countries, setCountries] = useState([]);
-  const [countrie, setCountrie] = useState("");
+  const [country, setCountry] = useState("");
  
   useEffect(() => {
     axios.get("https://restcountries.eu/rest/v2/all")
@@ -20,7 +20,7 @@ function App() {
 
   const handleChange = e => {
     const { value } = e.target;
-    setCountrie(JSON.parse(value));
+    setCountry(JSON.parse(value));
   }
 
   return (
@@ -28,7 +28,7 @@ function App() {
       {loading ? 
         <Loading/>
         :
-        <Display countries={countries} handleChange={handleChange} countrie={countrie}/>
+        <Display countries={countries} handleChange={handleChange} country={country}/>
       }
     </div>
   );
