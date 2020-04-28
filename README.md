@@ -52,6 +52,10 @@ Will be create folder /build with the files. Inserts into HTTP server. [More inf
 
 - [Wesley Adriann](https://github.com/WesleyAdriann)
 
+## Project Status
+
+- **Concluded**
+
 ## URL Project Reference
 
 - [https://github.com/WesleyAdriann/countries](https://github.com/WesleyAdriann/countries)
